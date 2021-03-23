@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    padding: 1;
+    margin: 2;
+}
+
+
+section {
+    width: 400px;
+    height: 400px;
+    right: 40%;
+    bottom: 40%;
+    position: absolute;
+}
+
+#countDown {
+    display: flex;
+    justify-content: left;
+}
+
+#quizQuestions {
+    margin: 40px;
+    padding: 20px;
+}
+
+#beginTimer {
+    background-color: rgb(51, 56, 100);
+    color: white;
+    font-weight: bolder;
+    padding: 30px 50px;
+    margin-left: 30%;
+}
+
+#returnBtn {
+    background-color: rgb(51, 56, 100);
+    color: white;
+    width: auto;
+    padding: 5px;
+    top: 1%;
+    left: 64%;
+    text-align: center;
+    position: relative;
+}
+
+#eraseScores {
+    background-color: rgb(51, 56, 100);
+    color: white;
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    top: 30%;
+    left: -6%;   
+}
+
+#submitBtn{
+    background-color: rgb(51, 56, 100);
+    margin-top: 20px;
+    margin-left: 33%;
+    padding: 15px 32px;
+    color: white;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    background-color: rgb(51, 56, 100);
+    color: white;
+    padding-left: 15px;
+    margin: 8px;
+    width: 45%;
+}
+
+@media screen and (max-width: 690px) {
+    body {
+    max-width: 690px;
+}
+    section {
+    position: absolute;
+    left: 20%;
+}
+    a {
+    margin-left: 20%;
+}
+    #returnBtn {
+    position: relative;
+    left: 50%;
+}
+    #eraseScores {
+    position: relative;
+    right: 5%;           
+}
+}
+        
+@media screen and (max-width: 540px) {
+    body {
+    min-width: 540px;
+}
+    section {
+    position: absolute;
+    left: 5%;
+}
+    a {
+    margin-left: 10%;
+}   
+}
