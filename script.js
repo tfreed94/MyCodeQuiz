@@ -92,3 +92,58 @@ function match(choicesAnswer) {
         init(arrayObject);
     }quizQuestions.appendChild(div);  
 }
+function gameOver() {
+    quizQuestions.innerHTML = ""; countDown.innerHTML = "";
+    // creating elements h1, label, input, p, button
+    var h1 = document.createElement("h1");
+    var label = document.createElement("label");
+    var input = document.createElement("input");
+    var p = document.createElement("p");
+    var submitBtn = document.createElement("button");
+    // Giving the created elements attributes of ID and naming the ID 
+    h1.setAttribute("id", "h1");
+    label.setAttribute("id", "label");
+    input.setAttribute("id", "initial");
+    p.setAttribute("id", "p");
+    submitBtn.setAttribute("id", "submitBtn");
+    // Creating content for h1, label, and submitBtn
+    h1.textContent = "Quiz Completed!"
+    label.textContent = "Initial here: ";
+    submitBtn.textContent = "Submit!";
+    // Appending the created ID's
+    quizQuestions.appendChild(h1);
+    quizQuestions.appendChild(label);
+    quizQuestions.appendChild(input);
+    quizQuestions.appendChild(p);
+    quizQuestions.appendChild(submitBtn);
+
+    // Left over time on the CountDownTime will be turned into the users high score
+    if (countDownTime >= 0) {
+        var secondsLeft = countDownTime;
+        clearInterval(startingPoint);
+        alert("You scored " + secondsLeft + " points!");
+    }
+    // Adds initSig and score to local storage
+    submitBtn.addEventListener("click", function () {
+        var initSig = input.value;
+        // If user does not enter Initials they will recieve an alert to do so
+        if (initSig) {
+            var userResults = {
+                initSig: initSig,
+                results: secondsLeft
+            }
+            var scores = localStorage.getItem("scores");
+            if (!scores) {
+                scores = [ ];
+            } else {
+                scores = JSON.parse(scores);
+            }
+            scores.push(userResults);
+            var scoreString = JSON.stringify(scores);
+            window.localStorage.setItem("scores", scoreString);
+            window.location.replace("./HighScores.html");
+        } else {
+            alert("Please sign your initials in the input box below, so everyone knows it was your high score!")
+        }
+    });
+}
