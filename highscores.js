@@ -11,7 +11,7 @@ if (scores) {
     }
 }
 returnBtn.addEventListener("click", function () {
-    window.location.replace("./index.html");
+    window.location.replace("index.html");
 });
 // When "reset highscores" is clicked then erase all previously stored highscores from local
 function erasescores () {

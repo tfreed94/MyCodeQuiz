@@ -141,7 +141,7 @@ function gameOver() {
             scores.push(userResults);
             var scoreString = JSON.stringify(scores);
             window.localStorage.setItem("scores", scoreString);
-            window.location.replace("./highscores.html");
+            window.location.replace("highscores.html");
         } else {
             alert("Please sign your initials in the input box below, so everyone knows it was your high score!")
         }
