@@ -69,3 +69,26 @@ beginTimer.addEventListener("click", function () {
     } 
     init(arrayObject);
 });
+//  Conditional function checking to see if the user answer is true or false
+function match(choicesAnswer) {
+    var choicesArrayElement = choicesAnswer.target;
+    // Creates an ID of div if user answers correctly
+    if (choicesArrayElement.matches("li")) {
+        var div = document.createElement("div");
+        div.setAttribute("id", "div");
+        // If the user answer matches the key-value pair of answers then return a string of "Correct" to let the user know they answered correctly
+        if (choicesArrayElement.textContent == questions[arrayObject].answers) {
+            results++;
+            div.textContent = "Correct!"
+        } else {
+            // Takes 15 seconds off of countDownTime if user answers incorrectly and lets user know they answered incorrectly by returning a string of "Wrong"
+            countDownTime = countDownTime - deduct;
+            div.textContent = "Wrong!"
+        }
+    } arrayObject++;
+    if (arrayObject >= questions.length) {
+        gameOver(); 
+    } else {
+        init(arrayObject);
+    }quizQuestions.appendChild(div);  
+}
