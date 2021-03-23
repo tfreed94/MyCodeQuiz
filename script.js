@@ -36,3 +36,36 @@ var questions = [
     }
 
 ];
+
+function init(arrayObject) {
+    quizQuestions.innerHTML = ""; ul.innerHTML = "";
+    // Checking all elements in questions array with for loop
+    for (var i = 0; i < questions.length; i++) {
+        question = questions[arrayObject].title;
+        multipleChoice = questions[arrayObject].choices;
+        quizQuestions.textContent = question;
+    }
+    // for each function to bring up next set of choices
+    multipleChoice.forEach(function (nextQuestionsChoices) {
+        li = document.createElement("li");
+        li.textContent = nextQuestionsChoices;
+        quizQuestions.appendChild(ul);
+        ul.appendChild(li);
+        li.addEventListener("click", (match));
+    })
+}
+// Button that starts countdown and adds the 75 second timer for user to see
+beginTimer.addEventListener("click", function () {
+    if (startingPoint === 0) {
+        startingPoint = setInterval(function () {
+            countDownTime--;
+            countDown.textContent = "Time Remaining: " + countDownTime;
+            if (countDownTime <= 0) {
+                window.clearInterval(startingPoint);
+                gameOver();
+                countDown.textContent = "Time's up!";
+            }
+        },1000);
+    } 
+    init(arrayObject);
+});
