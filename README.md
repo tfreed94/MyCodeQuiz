@@ -15,3 +15,5 @@ HTLM, CSS, Javascript, jQuery
 ![](assets/myCodeQuiz2.png)
 
 (https://tfreed94.github.io/MyCodeQuiz/)
+
+This project is liscensed under the terms of the MIT License
