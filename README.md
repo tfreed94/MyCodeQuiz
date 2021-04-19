@@ -10,6 +10,8 @@ If the user does not enter any initials, they will be prompted to do so. The use
 # Technologies Used : 
 HTLM, CSS, Javascript, jQuery
 
+# Screenshots
 ![](assets/myCodeQuiz.png)
+![](assets/myCodeQuiz2.png)
 
 (https://tfreed94.github.io/MyCodeQuiz/)
